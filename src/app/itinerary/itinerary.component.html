@@ -1,0 +1,12 @@
+<div class="row">
+  <div class="col-lg-8 col-md-6">
+    <div class="airlineLogo"></div>
+    <div *ngFor="let trip of itinerary.trips; let pindex = index;">
+      <app-itinerary-trip [trip]="trip" [itinerary]="itinerary" [idx]="pindex"></app-itinerary-trip>
+    </div>
+  </div>
+
+
+</div>
+
+

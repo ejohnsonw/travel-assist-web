@@ -1,0 +1,9 @@
+<div *ngIf="trip">
+  <h2>Trip: {{trip.name}}</h2>
+
+  <!--<h3>Stages</h3>-->
+  <div class="row" *ngFor="let s of trip.stages">
+    <app-stagecard [stage]="s" class="col-md-12" *ngIf=" s.tripIndex == tripIdx && (s.typeId == 3 || s.typeId == 4)"></app-stagecard>
+  </div>
+
+</div>

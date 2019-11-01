@@ -1,0 +1,89 @@
+<div class="col-md-12 stagecard">
+  <div class="card ">
+    <div class="card-header ">
+      <h5 class="card-title">{{stage.name}}</h5>
+      <!--<p class="card-category">24 Hours performance</p>-->
+    </div>
+    <div class="card-body ">
+      <!--<canvas id=chartHours width="400" height="100"></canvas>-->
+      <!--<div class="row">-->
+      <!--<button class="btn btn-primary btn-sm stagecardbutton" *ngIf="stage.typeId > 1" (click)="getBusiness()">Search</button>-->
+      <!--</div>-->
+      <!--<div *ngFor="let s of services">-->
+      <!--{{s.name}}-->
+      <!--</div>-->
+      <div class="col-md-12 pl-1">
+        <div class="form-group">
+          <label for="exampleInputEmail1">Search</label>
+          <input type="text" class="form-control" placeholder="Name or Description" (keyup)="getBusiness()"
+                 [(ngModel)]="criteria">
+        </div>
+      </div>
+
+
+      <div *ngIf="businesses && stage.typeId == 3 || stage.typeId == 2" class="row">
+
+        <div class="table-responsive">
+          <table class="table">
+            <thead class=" text-primary">
+            <!--<th class="text-right" width="25%">-->
+
+            <!--</th>-->
+            <th width="50%">
+              Name
+            </th>
+            <th width="35%">
+              Description
+            </th>
+            <th width="15%" class="text-right">
+              Catalog
+            </th>
+
+            </thead>
+            <tbody>
+            <tr *ngFor="let business of businesses">
+              <!--<td class="text-right">-->
+              <!--<img src="{{getPhoto(business.photo)}}" width="50%">-->
+              <!--</td>-->
+              <td>
+                <img src="{{getPhoto(business.photo)}}" width="50%">
+                <!--<br>-->
+                <!--<h6>{{business.name}}</h6>-->
+              </td>
+              <td>
+                {{business.description}}
+              </td>
+              <!--<td>-->
+              <!--<app-advertisementcard  [business]="business"></app-advertisementcard>-->
+              <!--</td>-->
+              <td class="text-right" style="padding-right: 30px">
+                <button class="btn btn-md btn-outline-success btn-round btn-icon" (click)="showCatalog(business)"
+                        *ngIf="business.hasCatalog"><i
+                  class="nc-icon nc-minimal-right"></i></button>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+
+
+      </div>
+      <div *ngIf="stage.typeId == 4 && catalogs" >
+        <app-catalog [catalogs]="catalogs" [catalog]="catalogs[0]"></app-catalog>
+      </div>
+    </div>
+    <!--<div class="card-footer " *ngIf="businesses && businesses.length > 0">-->
+    <!--<h6>Offers</h6>-->
+    <!--<hr>-->
+    <!--<div class="stats">-->
+    <!--<div *ngFor="let business of businesses">-->
+    <!--<div class="col-lg-3 col-md-6 col-sm-6" *ngFor="let ad of business.ads">-->
+    <!--<app-advertisementcard [ad]="ad" [business]="business"></app-advertisementcard>-->
+    <!--</div>-->
+
+    <!--</div>-->
+
+    <!--</div>-->
+    <!--</div>-->
+  </div>
+</div>

@@ -1,0 +1,4 @@
+<div *ngIf="trip">
+  <h2>Trip: {{trip.event.name}}</h2>
+  <app-itinerary [itinerary]="trip.itinerary"></app-itinerary>
+</div>
