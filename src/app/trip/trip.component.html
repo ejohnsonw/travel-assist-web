@@ -1,13 +1,13 @@
 
-<div class="row">
-  <div class="col-md-5 pl-1 col-sm-4">
+<div class="row justify-content-center">
+  <div class="col-md-4 col-sm-5">
     <div class="form-group">
       <label>Booking Number</label>
       <input type="text" class="form-control" [(ngModel)]="bookingId" [ngModelOptions]="{standalone: true}" placeholder="Enter booking number">
     </div>
   </div>
 
-  <div class="col-md-4 pl-1 col-sm-4" >
+  <div class="col-md-4 col-sm-2" >
     <div class="form-group">
       <button class="btn btn-md btn-primary" (click)="showCart()" style="margin-top: 30px">Retrieve</button>
     </div>
@@ -18,3 +18,4 @@
   <h2 *ngIf="tripService.trip.name">Trip: {{tripService.trip.name}}</h2>
   <app-itinerary [itinerary]="tripService.trip.itinerary"></app-itinerary>
 </div>
+
