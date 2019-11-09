@@ -25,6 +25,8 @@ import { ShopComponent } from './shop/shop.component';
 import { ItineraryTripComponent } from './itinerary-trip/itinerary-trip.component';
 import { CartDialogComponent } from './cart-dialog/cart-dialog.component';
 import { OrderInfoComponent } from './order-info/order-info.component';
+import { OrdersComponent } from './orders/orders.component';
+import { OrderItemsComponent } from './order-items/order-items.component';
 
 
 
@@ -32,7 +34,6 @@ import { OrderInfoComponent } from './order-info/order-info.component';
   declarations: [
     AppComponent,
     AdminLayoutComponent,
-
 
   ],
   imports: [

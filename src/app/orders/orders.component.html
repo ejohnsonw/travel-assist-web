@@ -1,0 +1,26 @@
+<div class="card-body">
+  <div class="table-responsive">
+    <table class="table">
+      <thead class=" text-primary">
+      <th width="25%">
+        Business
+      </th>
+      <th width="35%">
+        Date
+      </th>
+      </thead>
+      <tbody>
+      <tr *ngFor="let p of orders">
+        <td>
+          <img src="https://quos.s3.amazonaws.com/{{p.image}}" width="150" class="clickable" (click)="selectOrder(p)"/>
+          <!--{{p.businessName}}-->
+        </td>
+        <td>
+          {{p.deferredTo}}
+        </td>
+      </tr>
+      </tbody>
+    </table>
+    <app-order-items [order]="selectedOrder" *ngIf="selectedOrder"></app-order-items>
+  </div>
+</div>

@@ -1,0 +1,131 @@
+<hr>
+<h5>Order Details</h5>
+
+
+<div class="card-body">
+  <div class="table-responsive">
+    <table class="table">
+      <thead class=" text-primary">
+      <th class="text-right" width="25%">
+
+      </th>
+      <th width="25%">
+        Name
+      </th>
+      <th width="35%">
+        Description
+      </th>
+      <th width="15%" class="text-right">
+        Price
+      </th>
+
+      <th width="15%" class="text-right">
+        Quantity
+      </th>
+
+      <th  class="text-right">
+        Action
+      </th>
+      </thead>
+      <tbody>
+      <tr *ngFor="let p of order.items">
+        <td class="text-right">
+          <img src="{{p.product.image}}" width="100%">
+        </td>
+        <td>
+          {{p.product.name}}
+        </td>
+        <td>
+          {{p.product.description}}
+        </td>
+        <td class="text-right" style="padding-right: 30px">
+          {{p.price/100}}
+        </td>
+        <td class="text-right" style="padding-right: 30px">
+          {{p.quantity}}
+        </td>
+        <td><button class="btn btn-md btn-outline-danger btn-round btn-icon" (click)="addProduct(p)"><i class="nc-icon nc-simple-add"></i>
+        </button></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+<div class="col-md-8">
+  <div class="card card-user">
+    <div class="card-header">
+      <h5 class="card-title">Order Information</h5>
+    </div>
+    <div class="card-body">
+      <form>
+        <div class="row">
+          <div class="col-md-12 pr-1">
+            <div class="form-group">
+              <label>Name</label>
+              <input type="text" class="form-control"  [(ngModel)]="order.name"  [ngModelOptions]="{standalone: true}">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 pr-1">
+            <div class="form-group">
+              <label>Phone</label>
+
+              <input type="text" class="form-control" [(ngModel)]="order.phone" [ngModelOptions]="{standalone: true}">
+            </div>
+          </div>
+          <div class="col-md-6 pl-1">
+            <div class="form-group">
+              <label for="exampleInputEmail1">Email address</label>
+              <input type="text" class="form-control" [(ngModel)]="order.email" [ngModelOptions]="{standalone: true}">
+            </div>
+          </div>
+        </div>
+        <!--<div class="row">-->
+        <!--<div class="col-md-12">-->
+        <!--<div class="form-group">-->
+        <!--<label>Address</label>-->
+        <!--<input type="text" class="form-control" placeholder="Home Address" value="Melbourne, Australia">-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--<div class="row">-->
+        <!--<div class="col-md-4 pr-1">-->
+        <!--<div class="form-group">-->
+        <!--<label>City</label>-->
+        <!--<input type="text" class="form-control" placeholder="City" value="Melbourne">-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--<div class="col-md-4 px-1">-->
+        <!--<div class="form-group">-->
+        <!--<label>Country</label>-->
+        <!--<input type="text" class="form-control" placeholder="Country" value="Australia">-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--<div class="col-md-4 pl-1">-->
+        <!--<div class="form-group">-->
+        <!--<label>Postal Code</label>-->
+        <!--<input type="number" class="form-control" placeholder="ZIP Code">-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--</div>-->
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group">
+              <label>Delivery</label>
+              <textarea class="form-control textarea delivery_info" [(ngModel)]="order.notes" [ngModelOptions]="{standalone: true}" [rows]="20" rows="20"></textarea>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="update ml-auto mr-auto">
+            <p style="padding: 10px">This is a deferred order: The order will be recorded today, <b>but will processed on/or around your date and time of arrival</b></p>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+

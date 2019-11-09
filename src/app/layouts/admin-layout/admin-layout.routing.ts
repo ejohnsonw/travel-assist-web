@@ -13,6 +13,7 @@ import {LocationsComponent} from '../../locations/locations.component';
 import {CatalogComponent} from '../../catalog/catalog.component';
 import {ShopComponent} from '../../shop/shop.component';
 import {CartDialogComponent} from '../../cart-dialog/cart-dialog.component';
+import {OrdersComponent} from '../../orders/orders.component';
 
 export const AdminLayoutRoutes: Routes = [
   {path: 'dashboard', component: DashboardComponent},
@@ -27,5 +28,6 @@ export const AdminLayoutRoutes: Routes = [
   {path: 'notifications', component: NotificationsComponent},
   {path: 'upgrade', component: UpgradeComponent},
   {path: 'viewCart', component: CartDialogComponent},
+  {path: 'orders', component: OrdersComponent},
   {path: 'catalog/:publicId', component: CatalogComponent}
 ];

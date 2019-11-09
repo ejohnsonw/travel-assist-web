@@ -1,10 +1,12 @@
-<div class="card card-stats" style="min-height: 200px">
+<div class="card card-stats" style="min-height: 200px; width: 570px">
   <div class="card-body tripPanel">
     <div class="row">
-      <div class="col-11 col-md-11">
+      <div class="col-11 col-md-12">
         <div>
           <!--<img src="https://airlinelogos.aero/500px/{{trip.segments[0].airlineMarketing}}.png" height="50">-->
           <img src="https://quos.s3.amazonaws.com/advertising/bento/airmaginary.png" height="50">
+          <button class="btn btn-md btn-outline-danger btn-round btn-icon" (click)="shop()" style="margin-left: 50px"><i
+            class="nc-icon nc-minimal-right"></i></button>
         </div>
         <!--<figcaption ng-class="{ 'ibtrip': $index==1, 'obtrip':$index==0}">-->
         <!--{{itinerary.SequenceNumber}} {{itinerary.typePricing.name}}-->
@@ -42,10 +44,10 @@
 
         </div>
       </div>
-      <div class="col-1 col-md-1" style="margin-top: 50px">
-        <button class="btn btn-md btn-outline-danger btn-round btn-icon" (click)="shop()"><i
-        class="nc-icon nc-minimal-right"></i></button>
-      </div>
+      <!--<div class="col-1 col-md-1" style="margin-top: 50px">-->
+        <!--<button class="btn btn-md btn-outline-danger btn-round btn-icon" (click)="shop()"><i-->
+        <!--class="nc-icon nc-minimal-right"></i></button>-->
+      <!--</div>-->
 
 
     </div>

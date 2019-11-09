@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ToastrService} from 'ngx-toastr';
 import {BackendService} from '../backend.service';
+import {TripService} from '../trip.service';
 
 @Component({
   selector: 'app-trip',
@@ -9,20 +10,21 @@ import {BackendService} from '../backend.service';
 })
 export class TripComponent implements OnInit {
 
-  constructor(private toastr: ToastrService, private backend: BackendService) {
-
+  bookingId
+  constructor(private toastr: ToastrService, private backend: BackendService, public tripService: TripService) {
+    this.tripService.loadTrip('d7abcae35ab8')
   }
 
 
-  trip
-
   ngOnInit() {
-    this.backend.itinerary('d7abcae35ab8').subscribe(data => {
-      this.trip = data
-      localStorage.setItem('trip', JSON.stringify(this.trip))
-    }, error => {
-      this.trip = undefined
-    })
+    // this.backend.itinerary('d7abcae35ab8').subscribe(data => {
+    //   this.trip = data
+    //   localStorage.setItem('trip', JSON.stringify(this.trip))
+    // }, error => {
+    //   this.trip = undefined
+    // })
+
+
 
   }
 

@@ -45,12 +45,14 @@ export class CartService {
     this.order['orderName'] = p['firstName'] + ' ' + p['lastName']
     this.order['orderPhone'] = p.phone
     this.order['orderEmail'] = p.email
-
+    this.order['bookingId'] =  trip['booking']['bookingId']
     if (!isNullOrUndefined(stage.arrivingFlight)) {
       this.order['delivery_info'] = 'Arriving on Flight: ' + stage.arrivingFlight + ' @ ' + stage.arrivalDateTime + ' \nAllergies: ' + p['food']['allergies']
       this.order['watchObject'] = stage.arrivingFlight
       this.order['deferredTo'] = stage.arrivalDateTime
     } else {
+      this.order['deferredTo'] = stage.startDateTime
+      this.order['watchObject'] = stage.objectKey
       this.order['delivery_info'] = 'Booking ID:' + trip['booking']['bookingId'] + '\nSeat: Unassigned\nAllergies: ' + p['food']['allergies']
     }
 

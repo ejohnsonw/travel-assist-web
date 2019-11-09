@@ -1,19 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 
 export interface RouteInfo {
-    path: string;
-    title: string;
-    icon: string;
-    class: string;
+  path: string;
+  title: string;
+  icon: string;
+  class: string;
 }
 
 export const ROUTES: RouteInfo[] = [
-    { path: '/trip',     title: 'Your Trip',         icon:'nc-map-big',       class: '' },
+  {path: '/trip', title: 'Your Trip', icon: 'nc-map-big', class: ''},
+  {path: '/orders', title: 'Your Orders', icon: 'nc-bag-16', class: ''},
   // { path: '/shop',         title: 'Shop',             icon:'nc-bag-16',    class: '' },
   // { path: '/icons',         title: 'Icons',             icon:'nc-diamond',    class: '' },
 ];
-
 
 
 // { path: '/icons',         title: 'Icons',             icon:'nc-diamond',    class: '' },
@@ -24,14 +24,15 @@ export const ROUTES: RouteInfo[] = [
 // { path: '/typography',    title: 'Typography',        icon:'nc-caps-small', class: '' },
 // { path: '/upgrade',       title: 'Upgrade to PRO',    icon:'nc-spaceship',  class: 'active-pro' },
 @Component({
-    moduleId: module.id,
-    selector: 'sidebar-cmp',
-    templateUrl: 'sidebar.component.html',
+  moduleId: module.id,
+  selector: 'sidebar-cmp',
+  templateUrl: 'sidebar.component.html',
 })
 
 export class SidebarComponent implements OnInit {
-    public menuItems: any[];
-    ngOnInit() {
-        this.menuItems = ROUTES.filter(menuItem => menuItem);
-    }
+  public menuItems: any[];
+
+  ngOnInit() {
+    this.menuItems = ROUTES.filter(menuItem => menuItem);
+  }
 }

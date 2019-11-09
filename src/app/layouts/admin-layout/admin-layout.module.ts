@@ -29,6 +29,8 @@ import {ItineraryTripComponent} from '../../itinerary-trip/itinerary-trip.compon
 import {ModalModule} from '../../_modal';
 import {CartDialogComponent} from '../../cart-dialog/cart-dialog.component';
 import {OrderInfoComponent} from '../../order-info/order-info.component';
+import {OrdersComponent} from '../../orders/orders.component';
+import {OrderItemsComponent} from '../../order-items/order-items.component';
 
 
 @NgModule({
@@ -62,6 +64,8 @@ import {OrderInfoComponent} from '../../order-info/order-info.component';
     ItineraryTripComponent,
     CartDialogComponent,
     OrderInfoComponent,
+    OrdersComponent,
+    OrderItemsComponent,
   ]
 })
 
