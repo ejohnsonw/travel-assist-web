@@ -1,11 +1,13 @@
-
-  <h3>{{business.name}}</h3>
-  <h4>{{business.description}}</h4>
+<h3>{{business.name}}</h3>
+<h4>{{business.description}}</h4>
 
 <div class="row">
-  <ngb-tabset *ngIf="catalogs">
+  <ngb-tabset *ngIf="catalog">
     <ngb-tab title="{{category.name}}" *ngFor="let category of catalog.productCategories">
       <ng-template ngbTabContent>
+        <div *ngIf="category.name == '1) Included options'">
+          <button class="btn btn-md btn-round btn-danger" (click)="declined()">Decline food</button>
+        </div>
         <app-categorylist [category]="category"></app-categorylist>
       </ng-template>
     </ngb-tab>
@@ -13,6 +15,13 @@
 </div>
 <div class="row">
   <div class="col-lg-4 col-md-4 col-sm-4" *ngFor="let ad of business.ads">
-    <app-advertisementcard [ad]="ad" [business]="business" ></app-advertisementcard>
+    <app-advertisementcard [ad]="ad" [business]="business"></app-advertisementcard>
   </div>
 </div>
+
+<div class="row" *ngIf="!cartService.isEmpty()">
+  <div class="col-lg-8 col-md-8 col-sm-8" >
+    <button class="btn btn-md btn-primary" (click)="showCart()">View Cart</button>
+  </div>
+</div>
+

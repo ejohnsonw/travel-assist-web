@@ -23,4 +23,13 @@ export class ItineraryTripComponent implements OnInit {
   shop() {
     this.router.navigate(['/shop/' + this.idx])
   }
+
+  formatPrice(price, n, x) {
+    if (typeof price != 'undefined') {
+      var re = '\\d(?=(\\d{' + (x || 3) + '})+' + (n > 0 ? '\\.' : '$') + ')';
+      return price.toFixed(Math.max(0, ~~n)).replace(new RegExp(re, 'g'), '$&,');
+    }
+    return '--'
+  };
+
 }

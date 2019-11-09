@@ -12,6 +12,7 @@ import {TripComponent} from '../../trip/trip.component';
 import {LocationsComponent} from '../../locations/locations.component';
 import {CatalogComponent} from '../../catalog/catalog.component';
 import {ShopComponent} from '../../shop/shop.component';
+import {CartDialogComponent} from '../../cart-dialog/cart-dialog.component';
 
 export const AdminLayoutRoutes: Routes = [
   {path: 'dashboard', component: DashboardComponent},
@@ -25,5 +26,6 @@ export const AdminLayoutRoutes: Routes = [
   {path: 'maps', component: MapsComponent},
   {path: 'notifications', component: NotificationsComponent},
   {path: 'upgrade', component: UpgradeComponent},
+  {path: 'viewCart', component: CartDialogComponent},
   {path: 'catalog/:publicId', component: CatalogComponent}
 ];

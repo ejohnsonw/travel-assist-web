@@ -1,3 +1,4 @@
+<h5>Cart</h5>
 <div class="card-body">
   <div class="table-responsive">
     <table class="table">
@@ -24,21 +25,21 @@
       </th>
       </thead>
       <tbody>
-      <tr *ngFor="let p of category.products">
+      <tr *ngFor="let p of cartService['order']['items']">
         <td class="text-right">
-          <img src="{{p.image}}" width="100%">
+          <img src="{{p.product.image}}" width="100%">
         </td>
         <td>
-          {{p.name}}
+          {{p.product.name}}
         </td>
         <td>
-          {{p.description}}
+          {{p.product.description}}
         </td>
         <td class="text-right" style="padding-right: 30px">
-          {{p.price/100}}
+          {{p.product.price/100}}
         </td>
         <td>
-          <input type="text" class="form-control" placeholder="0" [(ngModel)]="p.quantity">
+          <input type="text" class="form-control" placeholder="0" [(ngModel)]="p.product.quantity">
         </td>
         <td><button class="btn btn-md btn-outline-danger btn-round btn-icon" (click)="addProduct(p)"><i class="nc-icon nc-simple-add"></i>
         </button></td>
@@ -47,3 +48,10 @@
     </table>
   </div>
 </div>
+<app-order-info></app-order-info>
+<div class="row" *ngIf="!cartService.isEmpty()">
+  <div class="col-lg-8 col-md-8 col-sm-8" >
+    <button class="btn btn-md btn-primary" (click)="purchase()">Purchase {{cartService.orderTotal()}}</button>
+  </div>
+</div>
+<h6 *ngIf="orderResult">Order #: {{orderResult.orderNumber}}</h6>

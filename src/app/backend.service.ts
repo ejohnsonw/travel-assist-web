@@ -40,6 +40,11 @@ export class BackendService {
     return this.http.post(this.baseUrl + 'travel-assist/itinerary/', request);
   }
 
+  createOrder(order) {
+    // const headers = new HttpHeaders().set("Authorization", "Bearer "+this.token.accessToken);
+    return this.http.post(this.baseUrl + 'travel-assist/createOrder/', order);
+  }
+
   servicesForStages(typeId) {
     // const headers = new HttpHeaders().set("Authorization", "Bearer "+this.token.accessToken);
     return this.http.get(this.baseUrl + 'travel-assist/servicesForStages/' + typeId);

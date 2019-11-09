@@ -3,7 +3,8 @@
     <div class="row">
       <div class="col-11 col-md-11">
         <div>
-          <img src="http://airlinelogos.aero/500px/{{trip.segments[0].airlineMarketing}}.png" height="50">
+          <!--<img src="https://airlinelogos.aero/500px/{{trip.segments[0].airlineMarketing}}.png" height="50">-->
+          <img src="https://quos.s3.amazonaws.com/advertising/bento/airmaginary.png" height="50">
         </div>
         <!--<figcaption ng-class="{ 'ibtrip': $index==1, 'obtrip':$index==0}">-->
         <!--{{itinerary.SequenceNumber}} {{itinerary.typePricing.name}}-->
@@ -17,7 +18,7 @@
 
           <span class="price-f" *ngIf="trip.segments.length-1 >= 1">{{trip.stops}} Stops</span>
           <span class="price-f" *ngIf="trip.segments.length-1 == 0">direct</span>
-          <span class="price-d" *ngIf="pindex === 0">${{formatPrice(itinerary.price,2, 3, ',', '.')}}</span>
+          <span class="price-d" *ngIf="idx === 0">${{formatPrice(itinerary.price,2, 3, ',', '.')}}</span>
         </div>
 
         <div class="flightSegmentBfm"

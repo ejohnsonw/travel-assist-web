@@ -1,5 +1,4 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {WebserviceService} from '../webservice.service';
 import {BackendService} from '../backend.service';
 
 @Component({

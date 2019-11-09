@@ -12,7 +12,7 @@
       <!--<div *ngFor="let s of services">-->
       <!--{{s.name}}-->
       <!--</div>-->
-      <div class="col-md-12 pl-1">
+      <div class="col-md-12 pl-1" *ngIf="stage.typeId != 4">
         <div class="form-group">
           <label for="exampleInputEmail1">Search</label>
           <input type="text" class="form-control" placeholder="Name or Description" (keyup)="getBusiness()"
@@ -57,8 +57,7 @@
               <!--<app-advertisementcard  [business]="business"></app-advertisementcard>-->
               <!--</td>-->
               <td class="text-right" style="padding-right: 30px">
-                <button class="btn btn-md btn-outline-success btn-round btn-icon" (click)="showCatalog(business)"
-                        *ngIf="business.hasCatalog"><i
+                <button class="btn btn-md btn-outline-success btn-round btn-icon" (click)="showCatalog(business)"><i
                   class="nc-icon nc-minimal-right"></i></button>
               </td>
             </tr>
@@ -69,7 +68,7 @@
 
       </div>
       <div *ngIf="stage.typeId == 4 && catalogs" >
-        <app-catalog [catalogs]="catalogs" [catalog]="catalogs[0]"></app-catalog>
+        <app-catalog [catalogs]="catalogs" [catalog]="catalogs[0]" [stage]="stage"></app-catalog>
       </div>
     </div>
     <!--<div class="card-footer " *ngIf="businesses && businesses.length > 0">-->

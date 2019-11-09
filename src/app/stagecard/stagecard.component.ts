@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {BackendService} from '../backend.service';
 import {Router} from '@angular/router';
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'app-stagecard',
@@ -14,7 +15,7 @@ export class StagecardComponent implements OnInit {
   businesses;
   catalogs
 
-  constructor(private backend: BackendService, private router: Router) {
+  constructor(private backend: BackendService, private router: Router, private toastr: ToastrService) {
   }
 
   getPhoto(url) {
@@ -80,8 +81,11 @@ export class StagecardComponent implements OnInit {
 
   showCatalog(business) {
     localStorage.setItem('business', JSON.stringify(business))
+    localStorage.setItem('stage', JSON.stringify(this.stage))
     this.router.navigate(['catalog/' + business.publicId])
   }
+
+
 
 
 }

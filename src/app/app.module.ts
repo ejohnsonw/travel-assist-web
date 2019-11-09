@@ -23,12 +23,16 @@ import { CatalogComponent } from './catalog/catalog.component';
 import { CategorylistComponent } from './categorylist/categorylist.component';
 import { ShopComponent } from './shop/shop.component';
 import { ItineraryTripComponent } from './itinerary-trip/itinerary-trip.component';
+import { CartDialogComponent } from './cart-dialog/cart-dialog.component';
+import { OrderInfoComponent } from './order-info/order-info.component';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    AdminLayoutComponent
+    AdminLayoutComponent,
+
 
   ],
   imports: [

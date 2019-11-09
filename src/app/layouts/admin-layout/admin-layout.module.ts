@@ -26,13 +26,18 @@ import {CategorylistComponent} from '../../categorylist/categorylist.component';
 import {ShopComponent} from '../../shop/shop.component';
 import {ItineraryComponent} from '../../itinerary/itinerary.component';
 import {ItineraryTripComponent} from '../../itinerary-trip/itinerary-trip.component';
+import {ModalModule} from '../../_modal';
+import {CartDialogComponent} from '../../cart-dialog/cart-dialog.component';
+import {OrderInfoComponent} from '../../order-info/order-info.component';
+
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule.forChild(AdminLayoutRoutes),
     FormsModule,
-    NgbModule
+    NgbModule,
+    ModalModule,
 
   ],
   declarations: [
@@ -55,6 +60,8 @@ import {ItineraryTripComponent} from '../../itinerary-trip/itinerary-trip.compon
     ShopComponent,
     ItineraryComponent,
     ItineraryTripComponent,
+    CartDialogComponent,
+    OrderInfoComponent,
   ]
 })
 
