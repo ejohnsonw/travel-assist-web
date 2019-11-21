@@ -18,7 +18,7 @@ export class OrdersComponent implements OnInit {
     this.backend.ordersForBooking(this.tripService.getBookingId()).subscribe(data => {
       this.orders = data
     }, error => {
-      this.trip = undefined
+      this.orders = undefined
     })
   }
 

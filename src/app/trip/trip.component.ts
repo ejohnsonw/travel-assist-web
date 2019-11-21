@@ -12,7 +12,7 @@ export class TripComponent implements OnInit {
 
   bookingId
   constructor(private toastr: ToastrService, private backend: BackendService, public tripService: TripService) {
-    this.tripService.loadTrip('d7abcae35ab8')
+    //this.tripService.loadTrip('d7abcae35ab8')
   }
 
 
@@ -23,9 +23,10 @@ export class TripComponent implements OnInit {
     // }, error => {
     //   this.trip = undefined
     // })
+  }
 
-
-
+  retrieveTrip(){
+      this.tripService.loadTrip('d7abcae35ab8')
   }
 
 }

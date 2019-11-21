@@ -1,12 +1,18 @@
+<div class="row justify-content-center">
+  <h2 >Orders</h2>
+</div>
 <div class="card-body">
-  <div class="table-responsive">
+  <div >
     <table class="table">
       <thead class=" text-primary">
       <th width="25%">
         Business
       </th>
       <th width="35%">
-        Date
+        Date to process
+      </th>
+      <th width="35%">
+        Status
       </th>
       </thead>
       <tbody>
@@ -18,9 +24,16 @@
         <td>
           {{p.deferredTo}}
         </td>
+
+        <td>
+          {{p.statusName}}
+        </td>
       </tr>
       </tbody>
     </table>
-    <app-order-items [order]="selectedOrder" *ngIf="selectedOrder"></app-order-items>
+
   </div>
+</div>
+<div class="row justify-content-center">
+  <app-order-items [order]="selectedOrder" *ngIf="selectedOrder"></app-order-items>
 </div>

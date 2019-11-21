@@ -1,21 +1,23 @@
-
 <div class="row justify-content-center">
-  <div class="col-md-4 col-sm-5">
+  <h2 *ngIf="tripService.trip && tripService.trip.event.name">Trip: {{tripService.trip.event.name}}</h2>
+</div>
+<hr>
+<div class="row justify-content-center">
+  <div class="col-lg-4 col-md-4 col-sm-5">
     <div class="form-group">
       <label>Booking Number</label>
       <input type="text" class="form-control" [(ngModel)]="bookingId" [ngModelOptions]="{standalone: true}" placeholder="Enter booking number">
     </div>
   </div>
 
-  <div class="col-md-4 col-sm-2" >
+  <div class="col-lg-4 col-md-4 col-sm-2" >
     <div class="form-group">
-      <button class="btn btn-md btn-primary" (click)="showCart()" style="margin-top: 30px">Retrieve</button>
+      <button class="btn btn-md btn-primary" (click)="retrieveTrip()" style="margin-top: 30px">Retrieve</button>
     </div>
   </div>
 </div>
 
 <div *ngIf="tripService.trip">
-  <h2 *ngIf="tripService.trip.name">Trip: {{tripService.trip.name}}</h2>
   <app-itinerary [itinerary]="tripService.trip.itinerary"></app-itinerary>
 </div>
 

@@ -6,7 +6,7 @@
     <ngb-tab title="{{category.name}}" *ngFor="let category of catalog.productCategories">
       <ng-template ngbTabContent>
         <div *ngIf="category.name == '1) Included options'">
-          <button class="btn btn-md btn-round btn-danger" (click)="declined()">Decline food</button>
+          <button class="btn btn-md btn-round btn-danger" (click)="declined()" style="margin-left: 15px">Decline food</button>
         </div>
         <app-categorylist [category]="category"></app-categorylist>
       </ng-template>
@@ -14,9 +14,9 @@
   </ngb-tabset>
 </div>
 <div class="row">
-  <div class="col-lg-4 col-md-4 col-sm-4" *ngFor="let ad of business.ads">
-    <app-advertisementcard [ad]="ad" [business]="business"></app-advertisementcard>
-  </div>
+  <!--<div class="col-lg-4 col-md-4 col-sm-4" *ngFor="let ad of business.ads">-->
+    <!--<app-advertisementcard [ad]="ad" [business]="business"></app-advertisementcard>-->
+  <!--</div>-->
 </div>
 
 <div class="row" *ngIf="!cartService.isEmpty()">

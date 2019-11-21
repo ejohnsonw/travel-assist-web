@@ -1,9 +1,9 @@
-<hr>
-<h5>Order Details</h5>
+
+<h5>Order Details: {{order.businessName}} @ <span *ngIf="order.watchObject.startsWith('XX')">Flight </span> {{order.watchObject}}</h5>
 
 
-<div class="card-body">
-  <div class="table-responsive">
+<div class="card-body justify-content-center">
+  <div >
     <table class="table">
       <thead class=" text-primary">
       <th class="text-right" width="25%">
@@ -23,9 +23,9 @@
         Quantity
       </th>
 
-      <th  class="text-right">
-        Action
-      </th>
+      <!--<th  class="text-right">-->
+        <!--Action-->
+      <!--</th>-->
       </thead>
       <tbody>
       <tr *ngFor="let p of order.items">
@@ -44,8 +44,8 @@
         <td class="text-right" style="padding-right: 30px">
           {{p.quantity}}
         </td>
-        <td><button class="btn btn-md btn-outline-danger btn-round btn-icon" (click)="addProduct(p)"><i class="nc-icon nc-simple-add"></i>
-        </button></td>
+        <!--<td><button class="btn btn-md btn-outline-danger btn-round btn-icon" (click)="addProduct(p)"><i class="nc-icon nc-simple-add"></i>-->
+        <!--</button></td>-->
       </tr>
       </tbody>
     </table>
@@ -53,7 +53,7 @@
 </div>
 
 
-<div class="col-md-8">
+<div class="col-md-8 mx-auto">
   <div class="card card-user">
     <div class="card-header">
       <h5 class="card-title">Order Information</h5>

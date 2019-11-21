@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {CartService} from '../cart.service';
 import {BackendService} from '../backend.service';
 import {ToastrService} from 'ngx-toastr';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-cart-dialog',
@@ -11,7 +12,7 @@ import {ToastrService} from 'ngx-toastr';
 export class CartDialogComponent implements OnInit {
   orderResult
 
-  constructor(public cartService: CartService, private backend: BackendService, private toastr: ToastrService) {
+  constructor(public cartService: CartService, private backend: BackendService, private toastr: ToastrService,private router: Router) {
 
   }
 
@@ -33,7 +34,9 @@ export class CartDialogComponent implements OnInit {
           toastClass: 'alert alert-info alert-with-icon',
           positionClass: 'toast-top-center'
         }
+
       );
+      //this.router.navigate(['orders'])
     }, error => {
       //this.webservice.showToast('bottom-right', 'Error', 'Could not retrieve Catalogs', 'danger');
     });

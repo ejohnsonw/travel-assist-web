@@ -1,5 +1,7 @@
 <div *ngIf="trip">
-  <h2>Trip: {{trip.name}}</h2>
+  <div class="row justify-content-center">
+    <h2 *ngIf="trip.name">Trip: {{trip.name}}</h2>
+  </div>
 
   <!--<h3>Stages</h3>-->
   <div class="row" *ngFor="let s of trip.stages">
